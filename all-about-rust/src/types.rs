@@ -38,6 +38,10 @@ pub fn run() {
     println!("d evaluates: b: {0} == b: {0} is {1}", b, d);
     println!("But a == b is {}", a == b);
 
-    let categ = 'A';
-    let categ = 'B';
+    let categ_a = 'A';
+    let categ_b = 'B';
+
+    let face = '\u{1F600}';
+
+    println!("{:?}", (categ_a, categ_b, face));
 }
