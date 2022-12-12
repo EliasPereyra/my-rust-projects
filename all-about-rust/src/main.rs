@@ -1,4 +1,5 @@
 // mod print;
+mod conditionals;
 mod strings;
 mod tuples;
 mod types;
@@ -11,5 +12,6 @@ fn main() {
     // types::run();
     // strings::run();
     // vectors::run();
-    tuples::run();
+    // tuples::run();
+    conditionals::run();
 }
