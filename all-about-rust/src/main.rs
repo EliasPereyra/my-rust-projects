@@ -1,5 +1,6 @@
 // mod print;
 mod strings;
+mod tuples;
 mod types;
 mod vars;
 mod vectors;
@@ -9,5 +10,6 @@ fn main() {
     // vars::run();
     // types::run();
     // strings::run();
-    vectors::run();
+    // vectors::run();
+    tuples::run();
 }
