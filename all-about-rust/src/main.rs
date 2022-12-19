@@ -1,6 +1,7 @@
 // mod print;
 mod arrays;
 mod conditionals;
+mod enums;
 mod functions;
 mod strings;
 mod structs;
@@ -19,5 +20,6 @@ fn main() {
     // conditionals::run();
     // arrays::run();
     // functions::run();
-    structs::run();
+    // structs::run();
+    enums::run();
 }
