@@ -3,6 +3,7 @@ mod arrays;
 mod conditionals;
 mod functions;
 mod strings;
+mod structs;
 mod tuples;
 mod types;
 mod vars;
@@ -17,5 +18,6 @@ fn main() {
     // tuples::run();
     // conditionals::run();
     // arrays::run();
-    functions::run();
+    // functions::run();
+    structs::run();
 }
