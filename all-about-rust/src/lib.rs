@@ -1,9 +1,3 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-    }
-}
-
 fn deliver_order() {}
 
 mod back_of_house {
@@ -33,8 +27,17 @@ mod back_of_house {
     fn cook_order() {}
 }
 
+mod front_of_house;
 // the 'use' keyword is a great shortcut for calling for functions
 use crate::front_of_house::hosting::add_to_waitlist;
+
+mod customer {
+    use crate::front_of_house::hosting;
+
+    fn new_function() {
+        hosting::add_to_waitlist()
+    }
+}
 
 pub fn eat_at_restaurant() {
     // Absolute path
