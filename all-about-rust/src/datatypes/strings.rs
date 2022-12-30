@@ -30,6 +30,14 @@ pub fn run() {
         println!("{}", word);
     }
 
+    // Concatenation with the + operator
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    // instead of concatenation like: s1 + " " + s2 + " " + s3
+    // we can simplify it by using the format! macro
+    let strings = format!("{s1}-{s2}-{s3}");
+
     // Create a str var by setting the capacity
     let mut stringed = String::with_capacity(10);
     stringed.push('a');
