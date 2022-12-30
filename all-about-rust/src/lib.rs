@@ -1,33 +1,8 @@
 fn deliver_order() {}
 
-mod back_of_house {
-    fn fix_incorrect_order() {
-        cook_order();
-        super::deliver_order();
-    }
-    pub struct Breakfast {
-        pub toast: String,
-        seasonal_fruit: String,
-    }
-
-    impl Breakfast {
-        pub fn summer(toast: &str) -> Breakfast {
-            Breakfast {
-                toast: String::from(toast),
-                seasonal_fruit: String::from("peaches"),
-            }
-        }
-    }
-
-    pub enum Appetizer {
-        Soup,
-        Salad,
-    }
-
-    fn cook_order() {}
-}
-
+mod back_of_house;
 mod front_of_house;
+
 // the 'use' keyword is a great shortcut for calling for functions
 use crate::front_of_house::hosting::add_to_waitlist;
 
@@ -56,4 +31,7 @@ pub fn eat_at_restaurant() {
 
     let order_appetizer1 = back_of_house::Appetizer::Soup;
     let order_appetizer2 = back_of_house::Appetizer::Salad;
+
+    let new_order = back_of_house::cook_order();
+    let fix_order = back_of_house::fix_incorrect_order();
 }
