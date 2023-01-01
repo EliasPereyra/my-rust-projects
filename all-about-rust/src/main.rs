@@ -1,18 +1,12 @@
-// mod print;
-mod arrays;
-mod conditionals;
-mod enums;
-mod functions;
-mod strings;
-mod structs;
-mod tuples;
-mod types;
-mod vars;
-mod vectors;
+mod datatypes;
+
+use crate::garden::vegetables::Asparagus;
+
+pub mod garden;
 
 fn main() {
     // print::run();
-    // vars::run();
+    // datatypes::vars::run();
     // types::run();
     // strings::run();
     // vectors::run();
@@ -21,5 +15,7 @@ fn main() {
     // arrays::run();
     // functions::run();
     // structs::run();
-    enums::run();
+    // enums::run();
+    let plant = Asparagus {};
+    println!("I'm growing {:?}", plant);
 }
