@@ -54,4 +54,9 @@ pub fn run() {
     for c in "בית".chars() {
         println!("{c}");
     }
+
+    // and instead, here I choose the bytes function. It returns each byte of each letter in the string
+    for c in "בית".bytes() {
+        println!("{c}");
+    }
 }
