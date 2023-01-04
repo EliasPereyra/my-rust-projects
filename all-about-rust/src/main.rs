@@ -8,7 +8,7 @@ fn main() {
     // print::run();
     // datatypes::vars::run();
     // types::run();
-    // strings::run();
+    // datatypes::strings::run();
     // vectors::run();
     // tuples::run();
     // conditionals::run();
@@ -16,6 +16,7 @@ fn main() {
     // functions::run();
     // structs::run();
     // enums::run();
-    let plant = Asparagus {};
-    println!("I'm growing {:?}", plant);
+    datatypes::hashmaps::run();
+    // let plant = Asparagus {};
+    // println!("I'm growing {:?}", plant);
 }
