@@ -2,6 +2,7 @@ pub mod arrays;
 pub mod conditionals;
 pub mod enums;
 pub mod functions;
+pub mod hashmaps;
 pub mod strings;
 pub mod structs;
 pub mod tuples;
