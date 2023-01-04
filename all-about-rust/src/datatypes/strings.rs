@@ -47,4 +47,11 @@ pub fn run() {
 
     // Assertion testing
     assert_eq!(2, stringed.len());
+
+    // Iterating on a string is very different unlike in other languages.
+    // Rust doesn't allow you to access for eg. the first character of a string[0] <- this syntax isn't valid on rust
+    // The best way to operate on pieces of strings is to be explicit about whether you want characters or bytes.
+    for c in "בית".chars() {
+        println!("{c}");
+    }
 }
