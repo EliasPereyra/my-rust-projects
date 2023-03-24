@@ -1,17 +1,17 @@
 // Enums are types which have a few definite values
 
 enum Movement {
-    Fly_up,
-    Fly_down,
-    Fly_right,
-    Fly_left,
+    FlyUp,
+    FlyDown,
+    FlyRight,
+    FlyLeft,
 }
 
 pub fn run() {
-    let plane_goes_up = Movement::Fly_up;
-    let plane_goes_down = Movement::Fly_down;
-    let plane_goes_right = Movement::Fly_right;
-    let plane_goes_left = Movement::Fly_left;
+    let plane_goes_up = Movement::FlyUp;
+    let plane_goes_down = Movement::FlyDown;
+    let plane_goes_right = Movement::FlyRight;
+    let plane_goes_left = Movement::FlyLeft;
 
     move_plane(plane_goes_up);
     move_plane(plane_goes_down);
