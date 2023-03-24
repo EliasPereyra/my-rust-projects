@@ -22,9 +22,9 @@ pub fn run() {
 fn move_plane(m: Movement) {
     // Perform action depending on data received
     match m {
-        Movement::Fly_up => println!("The plane is flying up"),
-        Movement::Fly_down => println!("The plane is flying down"),
-        Movement::Fly_right => println!("The plane is flying to the right"),
-        Movement::Fly_left => println!("The plane is flying to the left"),
+        Movement::FlyUp => println!("The plane is flying up"),
+        Movement::FlyDown => println!("The plane is flying down"),
+        Movement::FlyRight => println!("The plane is flying to the right"),
+        Movement::FlyLeft => println!("The plane is flying to the left"),
     }
 }
