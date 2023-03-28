@@ -15,8 +15,8 @@ fn main() {
     // arrays::run();
     // functions::run();
     // structs::run();
-    // enums::run();
-    datatypes::hashmaps::run();
+    enums::run();
+    // datatypes::hashmaps::run();
     // let plant = Asparagus {};
     // println!("I'm growing {:?}", plant);
 }
