@@ -1,4 +1,5 @@
 mod datatypes;
+mod error_handling;
 
 use crate::garden::vegetables::Asparagus;
 
@@ -15,8 +16,9 @@ fn main() {
     // arrays::run();
     // functions::run();
     // structs::run();
-    enums::run();
+    // enums::run();
     // datatypes::hashmaps::run();
     // let plant = Asparagus {};
     // println!("I'm growing {:?}", plant);
+    error_handling::unrecoverable_errors::run();
 }
