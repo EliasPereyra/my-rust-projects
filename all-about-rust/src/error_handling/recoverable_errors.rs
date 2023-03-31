@@ -1,4 +1,5 @@
 use std::fs::File;
+use std::io::ErrorKind;
 
 pub fn run() {
     // sometimes when handling errors, we don't want the program to stop because of an error.
@@ -13,4 +14,20 @@ pub fn run() {
     };
 
     // The return type of File::open is a Result<T, E>
+
+    // Managing different errors
+    let random_text2 = File::open("./src/error_handling/second_text.txt");
+
+    let random_file2 = match random_text2 {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("./src/error_handling/second_text.txt") {
+                Ok(file) => file,
+                Err(error) => panic!("Problem when creating the file: {:?}", error),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error);
+            }
+        },
+    };
 }
