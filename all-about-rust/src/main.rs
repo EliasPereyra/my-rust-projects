@@ -20,5 +20,6 @@ fn main() {
     // datatypes::hashmaps::run();
     // let plant = Asparagus {};
     // println!("I'm growing {:?}", plant);
-    error_handling::unrecoverable_errors::run();
+    // error_handling::unrecoverable_errors::run();
+    error_handling::recoverable_errors::run();
 }
