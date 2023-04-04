@@ -16,6 +16,7 @@ pub fn run() {
     // The return type of File::open is a Result<T, E>
 
     // Managing different errors
+    /* -- Here we use a lot of match. we can simplify this code with closures (unwrap_or_else)
     let random_text2 = File::open("./src/error_handling/second_text.txt");
 
     let random_file2 = match random_text2 {
@@ -30,4 +31,17 @@ pub fn run() {
             }
         },
     };
+    */
+
+    let text_path = "./src/error_handling/second_text_with_closure.txt";
+
+    let random_text3 = File::open(&text_path).unwrap_or_else(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create(&text_path).unwrap_or_else(|error| {
+                panic!("There was a problem when creating the file: {:?}", error);
+            })
+        } else {
+            panic!("Problem when opening the file: {:?}", error);
+        }
+    });
 }
