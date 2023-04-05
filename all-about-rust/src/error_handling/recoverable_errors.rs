@@ -44,4 +44,12 @@ pub fn run() {
             panic!("Problem when opening the file: {:?}", error);
         }
     });
+
+    // Here we  use a function that saves us space writing match many times.
+    // We have two options: unwrap() and exepect(); unwrap gives us two results, an OK, and an automatic panic,
+    // i.e., We don't have to call a panic! manually, but it does it for us.
+    // expect gives us two results too, but also gives us the liberty of providing a customized message if there was
+    // an error, and the message is passed as a parameter.
+    let greeting_file =
+        File::open("./src/error_handling/hello.txt").expect("This file doesn't exist");
 }
