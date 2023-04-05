@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::ErrorKind;
+use std::io::{self, ErrorKind, Read};
 
 pub fn run() {
     // sometimes when handling errors, we don't want the program to stop because of an error.
@@ -52,4 +52,20 @@ pub fn run() {
     // an error, and the message is passed as a parameter.
     let greeting_file =
         File::open("./src/error_handling/hello.txt").expect("This file doesn't exist");
+}
+
+pub fn read_email_from_file() -> Result<String, io::Error> {
+    let user_email_result = File::open("./src/error_handling/email.txt");
+
+    let mut user_email = match user_email_result {
+        Ok(file) => file,
+        Err(e) => return Err(e),
+    };
+
+    let mut user = String::new();
+
+    match user_email.read_to_string(&mut user) {
+        Ok(_) => Ok(user),
+        Err(e) => Err(e),
+    }
 }
