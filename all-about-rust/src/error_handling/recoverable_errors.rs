@@ -48,13 +48,15 @@ pub fn run() {
     // Here we  use a function that saves us space writing match many times.
     // We have two options: unwrap() and exepect(); unwrap gives us two results, an OK, and an automatic panic,
     // i.e., We don't have to call a panic! manually, but it does it for us.
-    // expect gives us two results too, but also gives us the liberty of providing a customized message if there was
+    // 'expect' gives us two results too, but also gives us the liberty of providing a customized message if there was
     // an error, and the message is passed as a parameter.
     let greeting_file =
         File::open("./src/error_handling/hello.txt").expect("This file doesn't exist");
 }
 
+// Propagating errors
 pub fn read_email_from_file() -> Result<String, io::Error> {
+    /*
     let user_email_result = File::open("./src/error_handling/email.txt");
 
     let mut user_email = match user_email_result {
@@ -68,4 +70,11 @@ pub fn read_email_from_file() -> Result<String, io::Error> {
         Ok(_) => Ok(user),
         Err(e) => Err(e),
     }
+    */
+
+    // Same logic but now with a shortcut
+    let mut username_file = File::open("./src/error_handling/recovered_email.txt")?;
+    let mut username = String::new();
+    username_file.read_to_string(&mut username)?;
+    Ok(username)
 }
