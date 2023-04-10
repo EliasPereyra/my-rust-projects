@@ -73,8 +73,20 @@ pub fn read_email_from_file() -> Result<String, io::Error> {
     */
 
     // Same logic but now with a shortcut
-    let mut username_file = File::open("./src/error_handling/recovered_email.txt")?;
+    /*
+    let mut username_file = File::open("./src/error_handling/email.txt")?;
     let mut username = String::new();
     username_file.read_to_string(&mut username)?;
     Ok(username)
+    */
+
+    // We can shorten it even more
+    let mut username = String::new();
+    File::open("./src/error_handling/email.txt")?.read_to_string(&mut username)?;
+
+    Ok(username)
+
+    // Going further (although it's not already about propagating errors) is using read_to_string()
+    // fs::read_to_string("path/to/file"); <-- this function comes from the standard library
+    // It does all the operations from above in just one function
 }
