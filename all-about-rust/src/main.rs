@@ -1,5 +1,6 @@
 mod datatypes;
 mod error_handling;
+mod generic_types;
 
 use crate::garden::vegetables::Asparagus;
 
@@ -22,5 +23,6 @@ fn main() {
     // println!("I'm growing {:?}", plant);
     // error_handling::unrecoverable_errors::run();
     // error_handling::recoverable_errors::run();
-    error_handling::recoverable_errors::read_email_from_file();
+    // error_handling::recoverable_errors::read_email_from_file();
+    generic_types::remove_duplications::run();
 }
