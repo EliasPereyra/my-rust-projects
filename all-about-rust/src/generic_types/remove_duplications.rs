@@ -37,6 +37,23 @@ fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     largest
 }
 
+// Generic in struct, thus says the docs: "this definition says that the Point<T>
+// struct is generic over some type T, and the fields x and y are both that same type,
+// whatever that type may be"
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+// If I implement that struct like: let points = Point{x:5, y: 5.0} <-- this won't compile
+// because the compiler gets the data type of the first field, and there's a mismatch.
+// To solve this, and you really different values, you can use different generic types.
+
+struct DifferentPoints<T, U> {
+    x: T,
+    y: U,
+}
+
 pub fn run() {
     let numbers_list = vec![24, 56, 72, 80, 45];
 
@@ -47,4 +64,13 @@ pub fn run() {
 
     let result = largest(&numbers_list);
     println!("The largest char is: {}", result);
+
+    let points = Point { x: 5, y: 6 };
+    println!("The points entered are: x = {}, y = {}", points.x, points.y);
+
+    let diff_points = DifferentPoints { x: 5, y: 5.5 };
+    println!(
+        "Now the points are different: x = {}, y = {}",
+        diff_points.x, diff_points.y
+    );
 }
