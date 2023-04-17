@@ -70,6 +70,21 @@ enum Result<T, E> {
 // enum definitions that differ only in the types of the values they hold, you can avoid
 // duplication by using generic types instead."
 
+// Method definitions
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
+// We can add constraints to our generic types for methods. So this method will only
+// work when Point is implemented with a datatype of f64.
+impl Point<f64> {
+    fn distance_from_origin(&self) -> f64 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
 pub fn run() {
     let numbers_list = vec![24, 56, 72, 80, 45];
 
@@ -89,4 +104,10 @@ pub fn run() {
         "Now the points are different: x = {}, y = {}",
         diff_points.x, diff_points.y
     );
+
+    let more_points = Point { x: 10, y: 20 };
+    println!("The points are: x {}", more_points.x());
+
+    let distance = Point { x: 3.2, y: 2.3 };
+    println!("The distance is: {}", distance.distance_from_origin());
 }
