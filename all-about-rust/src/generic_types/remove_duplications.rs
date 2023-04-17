@@ -54,6 +54,22 @@ struct DifferentPoints<T, U> {
     y: U,
 }
 
+// Enums, as for structs, enums can operate over generic data types and its values too.
+// Some holds a value of type T and None is optional
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+
+// Thus says the docs: "When you recognize situations in your code with multiple struct or
+// enum definitions that differ only in the types of the values they hold, you can avoid
+// duplication by using generic types instead."
+
 pub fn run() {
     let numbers_list = vec![24, 56, 72, 80, 45];
 
